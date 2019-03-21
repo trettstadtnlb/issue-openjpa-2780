@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © NORD/LB Norddeutsche Landesbank Girozentrale, Hannover - Alle Rechte vorbehalten -
+  -->
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+  <persistence-unit name="add" transaction-type="RESOURCE_LOCAL">
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
+      <property name="javax.persistence.jdbc.url"
+        value="jdbc:derby:testdb;create=true"/>
+      <property name="openjpa.jdbc.SynchronizeMappings"
+        value="buildSchema(ForeignKeys=true,schemaAction='dropDB,add')"/>
+      <property name="openjpa.Log" value="SQL=TRACE"/>
+    </properties>
+  </persistence-unit>
+</persistence>
